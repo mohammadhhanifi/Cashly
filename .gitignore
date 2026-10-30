@@ -483,3 +483,5 @@ dist/
 # Secrets and local settings
 .env
 .env.*
+
+.nx/
