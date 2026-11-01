@@ -15,12 +15,12 @@ namespace Cashly.Backend.Controllers
         private readonly CashlyDbContext _db = db;
 
         [HttpGet("list")]
-        public async Task<IActionResult> CategoryList()
+        public async Task<IActionResult> List()
         {
             var categories = await _db.Categories
             .AsNoTracking()
             .ToListAsync();
-            
+
             return Ok(categories);
         }
 
