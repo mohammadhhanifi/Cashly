@@ -53,13 +53,26 @@ namespace Cashly.Backend.Controllers
         public async Task<IActionResult> Edit(int id, CategoryEditDto dto)
         {
             var category = await _db.Categories
-            .FirstOrDefaultAsync(c=> c.Id == id && c.UserId ==TempUserId);
+            .FirstOrDefaultAsync(c => c.Id == id && c.UserId == TempUserId);
             if (category != null)
             {
                 category.Color = dto.Color;
                 category.Title = dto.Title;
                 category.Icon = dto.Icon;
                 category.Type = dto.Type;
+                await _db.SaveChangesAsync();
+                return NoContent();
+            }
+            return NotFound();
+        }
+        [HttpDelete("delete/{id:int}")]
+        public async Task<IActionResult> Remove(int id)
+        {
+            var category = await _db.Categories
+            .FirstOrDefaultAsync(c => c.Id == id && c.UserId == TempUserId);
+            if (category != null)
+            {
+                _db.Categories.Remove(category);
                 await _db.SaveChangesAsync();
                 return NoContent();
             }
