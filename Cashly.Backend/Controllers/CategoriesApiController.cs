@@ -27,7 +27,6 @@ namespace Cashly.Backend.Controllers
 
             return Ok(categories);
         }
-
         [HttpPost("add")]
         public async Task<IActionResult> Add(CategoryAddDto dto)
         {
@@ -50,6 +49,21 @@ namespace Cashly.Backend.Controllers
             return Ok(category);
 
         }
-
+        [HttpPut("edit/{id:int}")]
+        public async Task<IActionResult> Edit(int id, CategoryEditDto dto)
+        {
+            var category = await _db.Categories
+            .FirstOrDefaultAsync(c=> c.Id == id && c.UserId ==TempUserId);
+            if (category != null)
+            {
+                category.Color = dto.Color;
+                category.Title = dto.Title;
+                category.Icon = dto.Icon;
+                category.Type = dto.Type;
+                await _db.SaveChangesAsync();
+                return NoContent();
+            }
+            return NotFound();
+        }
     }
 }
