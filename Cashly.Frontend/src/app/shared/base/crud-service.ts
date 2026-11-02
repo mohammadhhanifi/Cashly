@@ -1,8 +1,7 @@
 import { inject } from "@angular/core";
 import { BackendService } from "../services/backend-service";
-import { CategoryAddRequest } from "../../pages/categories/models/category-add-request";
 
-export class CrudService<TAddRequest, TEditRequest> {
+export class CrudService<TAddRequest, TEditRequest,> {
   backend = inject(BackendService);
   apiName = '';
 
