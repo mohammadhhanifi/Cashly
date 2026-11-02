@@ -9,4 +9,13 @@ export class BackendService {
   get(api: string) {
     return this.http.get(environment.apiUrl + api)
   }
+  post(api: string, data: any) {
+    return this.http.post(environment.apiUrl + api, data)
+  }
+  put(api: string, data: any) {
+    return this.http.put(environment.apiUrl + api, data)
+  }
+  delete(api: string) {
+    return this.http.delete(environment.apiUrl + api)
+  }
 }

@@ -15,8 +15,8 @@ namespace Cashly.Backend.Controllers
     public class CategoriesApiController(CashlyDbContext db) : ControllerBase
     {
         private readonly CashlyDbContext _db = db;
-        // temporary until authentication exists. Replace with the authenticated user's id.
         private const string TempUserId = "temp-user";
+        // temporary until authentication exists. Replace with the authenticated user's id.
 
         [HttpGet("list")]
         public async Task<IActionResult> List()
@@ -30,10 +30,6 @@ namespace Cashly.Backend.Controllers
         [HttpPost("add")]
         public async Task<IActionResult> Add(CategoryAddDto dto)
         {
-
-
-
-
             var category = new Category
             {
                 Icon = dto.Icon,
@@ -47,7 +43,6 @@ namespace Cashly.Backend.Controllers
             await _db.Categories.AddAsync(category);
             await _db.SaveChangesAsync();
             return Ok(category);
-
         }
         [HttpPut("edit/{id:int}")]
         public async Task<IActionResult> Edit(int id, CategoryEditDto dto)

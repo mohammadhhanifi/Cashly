@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { CategoryService } from '../services/category-service';
+import { Component } from '@angular/core';
+
 
 @Component({
   imports: [],
@@ -7,10 +7,7 @@ import { CategoryService } from '../services/category-service';
   styleUrl: './categories.css',
   templateUrl: './categories.html',
 })
-export class Categories implements OnInit {
-  service = inject(CategoryService);
+export class Categories {
 
-  ngOnInit(): void {
-    this.service.list();
-  }
 }
+
