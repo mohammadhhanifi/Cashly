@@ -15,8 +15,8 @@ namespace Cashly.Backend.Controllers
     public class CategoriesApiController(CashlyDbContext db) : ControllerBase
     {
         private readonly CashlyDbContext _db = db;
-        private const string TempUserId = "temp-user";
         // temporary until authentication exists. Replace with the authenticated user's id.
+        private const string TempUserId = "temp-user";
 
         [HttpGet("list")]
         public async Task<IActionResult> List()
