@@ -116,6 +116,9 @@
   --color-income: var(--income);
   --color-expense: var(--expense);
   --color-warning: var(--warning);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
 }
 
 @layer base {
