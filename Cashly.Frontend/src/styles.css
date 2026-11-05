@@ -1,6 +1,110 @@
+
 @import '@fontsource-variable/geist';
 @import 'tailwindcss';
 
-@theme {
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
   --font-sans: 'Geist Variable', sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-primary-light: var(--primary-light);
+  --color-divider: var(--divider);
+  --color-subtle: var(--subtle);
+  --color-disabled: var(--disabled);
+  --color-income: var(--income);
+  --color-expense: var(--expense);
+  --color-warning: var(--warning);
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+/* Light theme */
+:root {
+  color-scheme: light;
+
+  --background: #F9FAFB;
+  --foreground: #111827;
+  --card: #FFFFFF;
+  --card-foreground: #111827;
+  --popover: #FFFFFF;
+  --popover-foreground: #111827;
+  --primary: #1522AF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3F4F6;
+  --secondary-foreground: #111827;
+  --muted: #F3F4F6;
+  --muted-foreground: #64748B;
+  --accent: #F1F5F9;
+  --accent-foreground: #111827;
+  --destructive: #DC2626;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --primary-light: rgb(21 34 175 / 10%);
+  --divider: #EEF0F2;
+  --subtle: #9CA3AF;
+  --disabled: #C1C5CC;
+  --income: #16A34A;
+  --expense: #DC2626;
+  --warning: #F59E0B;
+}
+
+/* Dark theme */
+.dark {
+  color-scheme: dark;
+
+  --background: #0B0F19;
+  --foreground: #F2F4F7;
+  --card: #141824;
+  --card-foreground: #F2F4F7;
+  --popover: #141824;
+  --popover-foreground: #F2F4F7;
+  --primary: #5468FF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1A1F2B;
+  --secondary-foreground: #F2F4F7;
+  --muted: #1A1F2B;
+  --muted-foreground: #9AA4B8;
+  --accent: #1F2430;
+  --accent-foreground: #F2F4F7;
+  --destructive: #F87171;
+  --border: #262B38;
+  --input: #262B38;
+  --primary-light: rgb(84 104 255 / 15%);
+  --divider: #1E222C;
+  --subtle: #6B7280;
+  --disabled: #454B57;
+  --income: #34D399;
+  --expense: #F87171;
+  --warning: #F59E0B;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--foreground);
 }
