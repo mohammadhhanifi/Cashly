@@ -1,4 +1,5 @@
 @layer theme, base, components, utilities;
+
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/preflight.css' layer(base);
 @import 'tailwindcss/utilities.css';
@@ -11,108 +12,226 @@
 @theme inline {
   --font-sans: 'Geist Variable', sans-serif;
 
-  --color-primary-light: var(--primary-light);
+  /* Cashly colors */
+  --color-primary: var(--primary);
+  --color-primary-light: var(--Primary-light);
+  --color-text-on-primary: var(--Text-on-primary);
+
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-surface-hover: var(--surface-hover);
+
   --color-divider: var(--divider);
-  --color-subtle: var(--subtle);
-  --color-disabled: var(--disabled);
+  --color-border: var(--border);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-disabled: var(--text-disabled);
+
   --color-income: var(--income);
   --color-expense: var(--expense);
   --color-warning: var(--warning);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
 
+  --color-header-dark: var(--header-dark);
+  --color-upgrade-bg-dark: var(--upgrade-bg-dark);
+
+  /* Category colors */
+  --color-category-food: var(--category-food);
+  --color-category-transport: var(--category-transport);
+  --color-category-rent: var(--category-rent);
+  --color-category-utilities: var(--category-utilities);
+  --color-category-entertainment: var(--category-entertainment);
+  --color-category-health: var(--category-health);
+  --color-category-shopping: var(--category-shopping);
+  --color-category-education: var(--category-education);
+  --color-category-travel: var(--category-travel);
+  --color-category-personal-care: var(--category-personal-care);
+  --color-category-subscriptions: var(--category-subscriptions);
+  --color-category-other: var(--category-other);
+
+  --color-category-salary: var(--category-salary);
+  --color-category-side-income: var(--category-side-income);
+  --color-category-investments: var(--category-investments);
+  --color-category-gift: var(--category-gift);
+  --color-category-other-income: var(--category-other-income);
+
+  /* Spartan colors */
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-destructive: var(--destructive);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
 }
 
-/* Light theme */
 :root {
   color-scheme: light;
 
-  --background: #f9fafb;
-  --foreground: #111827;
-  --card: #ffffff;
-  --card-foreground: #111827;
-  --popover: #ffffff;
-  --popover-foreground: #111827;
+  /* Cashly colors */
   --primary: #1522af;
-  --primary-foreground: #ffffff;
-  --secondary: #f3f4f6;
-  --secondary-foreground: #111827;
-  --muted: #f3f4f6;
-  --muted-foreground: #64748b;
-  --accent: #f1f5f9;
-  --accent-foreground: #111827;
-  --destructive: #dc2626;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
+  --Primary-light: rgb(21 34 175 / 10%);
+  --Text-on-primary: #ffffff;
 
-  /* Cashly tokens */
-  --primary-light: rgb(21 34 175 / 10%);
+  --background: #f9fafb;
+  --surface: #ffffff;
+  --surface-secondary: #f3f4f6;
+  --surface-hover: #f1f5f9;
+
   --divider: #eef0f2;
-  --subtle: #9ca3af;
-  --disabled: #c1c5cc;
+  --border: #e5e7eb;
+
+  --text-primary: #111827;
+  --text-secondary: #64748b;
+  --text-muted: #9ca3af;
+  --text-disabled: #c1c5cc;
+
   --income: #16a34a;
   --expense: #dc2626;
   --warning: #f59e0b;
+  --success: #16a34a;
+  --danger: #dc2626;
 
-  /* Spartan extras */
+  /* Categories - Expense */
+  --category-food: #f59e0b;
+  --category-transport: #4f46e5;
+  --category-rent: #92400e;
+  --category-utilities: #f97316;
+  --category-entertainment: #f43f5e;
+  --category-health: #14b8a6;
+  --category-shopping: #d946ef;
+  --category-education: #4c1d95;
+  --category-travel: #0ea5e9;
+  --category-personal-care: #eab308;
+  --category-subscriptions: #9333ea;
+  --category-other: #a3a3a3;
+
+  /* Categories - Income */
+  --category-salary: #1e3a8a;
+  --category-side-income: #7dd3fc;
+  --category-investments: #065f46;
+  --category-gift: #ec4899;
+  --category-other-income: #a3a3a3;
+
+  /* Spartan aliases */
+  --foreground: var(--text-primary);
+
+  --card: var(--surface);
+  --card-foreground: var(--text-primary);
+
+  --popover: var(--surface);
+  --popover-foreground: var(--text-primary);
+
+  --primary-foreground: var(--Text-on-primary);
+
+  --secondary: var(--surface-secondary);
+  --secondary-foreground: var(--text-primary);
+
+  --muted: var(--surface-secondary);
+  --muted-foreground: var(--text-secondary);
+
+  --accent: var(--surface-hover);
+  --accent-foreground: var(--text-primary);
+
+  --destructive: var(--danger);
+  --input: var(--border);
+
   --radius: 0.625rem;
   --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-
-  /* Sidebar follows the main tokens */
-  --sidebar: var(--card);
-  --sidebar-foreground: var(--foreground);
-  --sidebar-primary: var(--primary);
-  --sidebar-primary-foreground: var(--primary-foreground);
-  --sidebar-accent: var(--accent);
-  --sidebar-accent-foreground: var(--accent-foreground);
-  --sidebar-border: var(--border);
-  --sidebar-ring: var(--ring);
 }
 
-/* Dark theme */
 :root.dark {
   color-scheme: dark;
 
-  --background: #0b0f19;
-  --foreground: #f2f4f7;
-  --card: #141824;
-  --card-foreground: #f2f4f7;
-  --popover: #141824;
-  --popover-foreground: #f2f4f7;
+  /* Cashly colors */
   --primary: #5468ff;
-  --primary-foreground: #ffffff;
-  --secondary: #1a1f2b;
-  --secondary-foreground: #f2f4f7;
-  --muted: #1a1f2b;
-  --muted-foreground: #9aa4b8;
-  --accent: #1f2430;
-  --accent-foreground: #f2f4f7;
-  --destructive: #f87171;
-  --border: #262b38;
-  --input: #262b38;
+  --Primary-light: rgb(84 104 255 / 15%);
+  --Text-on-primary: #ffffff;
 
-  /* Cashly tokens */
-  --primary-light: rgb(84 104 255 / 15%);
+  --background: #0b0f19;
+  --surface: #141824;
+  --surface-secondary: #1a1f2b;
+  --surface-hover: #1f2430;
+
   --divider: #1e222c;
-  --subtle: #6b7280;
-  --disabled: #454b57;
+  --border: #262b38;
+
+  --text-primary: #f2f4f7;
+  --text-secondary: #9aa4b8;
+  --text-muted: #6b7280;
+  --text-disabled: #454b57;
+
   --income: #34d399;
   --expense: #f87171;
   --warning: #f59e0b;
+  --success: #34d399;
+  --danger: #f87171;
 
-  /* Spartan extras */
+  --header-dark: #242b3d;
+  --upgrade-bg-dark: #1c2333;
+
+  /* Categories - Expense */
+  --category-food: #fbbf24;
+  --category-transport: #818cf8;
+  --category-rent: #c2760f;
+  --category-utilities: #fdba74;
+  --category-entertainment: #fb7185;
+  --category-health: #2dd4bf;
+  --category-shopping: #e879f9;
+  --category-education: #a78bfa;
+  --category-travel: #7dd3fc;
+  --category-personal-care: #facc15;
+  --category-subscriptions: #c084fc;
+  --category-other: #9ca3af;
+
+  /* Categories - Income */
+  --category-salary: #818cf8;
+  --category-side-income: #93e1ff;
+  --category-investments: #34d399;
+  --category-gift: #f472b6;
+  --category-other-income: #9ca3af;
+
+  /* Spartan aliases */
+  --foreground: var(--text-primary);
+
+  --card: var(--surface);
+  --card-foreground: var(--text-primary);
+
+  --popover: var(--surface);
+  --popover-foreground: var(--text-primary);
+
+  --primary-foreground: var(--Text-on-primary);
+
+  --secondary: var(--surface-secondary);
+  --secondary-foreground: var(--text-primary);
+
+  --muted: var(--surface-secondary);
+  --muted-foreground: var(--text-secondary);
+
+  --accent: var(--surface-hover);
+  --accent-foreground: var(--text-primary);
+
+  --destructive: var(--danger);
+  --input: var(--border);
+
   --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
 }
 
 @layer base {
