@@ -131,6 +131,8 @@
   --category-other-income: #a3a3a3;
 
   /* Spartan aliases */
+  --header-dark: #1e293b;
+  
   --foreground: var(--text-primary);
 
   --card: var(--surface);
@@ -154,7 +156,16 @@
   --input: var(--border);
 
   --radius: 0.625rem;
-  --ring: oklch(0.708 0 0);
+  --ring: var(--primary);
+
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--Text-on-primary);
+  --sidebar-accent: var(--surface-hover);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--primary);
 }
 
 :root.dark {
