@@ -132,7 +132,7 @@
 
   /* Spartan aliases */
   --header-dark: #1e293b;
-  
+
   --foreground: var(--text-primary);
 
   --card: var(--surface);
@@ -162,7 +162,7 @@
   --sidebar-foreground: var(--text-primary);
   --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: var(--Text-on-primary);
-  --sidebar-accent: var(--surface-hover);
+  --sidebar-accent: var(--Primary-light);
   --sidebar-accent-foreground: var(--text-primary);
   --sidebar-border: var(--border);
   --sidebar-ring: var(--primary);

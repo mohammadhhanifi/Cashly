@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { Categories } from './pages/categories/categories';
-import { MainLayout } from './pages/shared/layout/main-layout/main-layout';
+import { MainLayout } from './shared/layout/main-layout/main-layout';
 
 export const routes: Routes = [
   { path: 'categories', component: Categories },

@@ -3,13 +3,11 @@
     <div hlmSidebarContent>
       <div hlmSidebarGroup>
         <div hlmSidebarGroupLabel>Application</div>
-
         <div hlmSidebarGroupContent>
           <ul hlmSidebarMenu>
             @for (item of _items; track item.title) {
             <li hlmSidebarMenuItem>
-              <a hlmSidebarMenuButton
-                [routerLink]="item.url">
+              <a hlmSidebarMenuButton [routerLink]="item.url">
                 <img [src]="item.icon" />
                 <span>{{ item.title }}</span>
               </a>
