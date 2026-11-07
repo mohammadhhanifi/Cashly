@@ -1,51 +1,47 @@
 import { Component } from '@angular/core';
-import { provideIcons, NgIcon } from '@ng-icons/core';
-import { lucideCalendar, lucideHouse, lucideInbox, lucideSearch, lucideSettings } from '@ng-icons/lucide';
+import { RouterLink } from '@angular/router';
 import { HlmSidebar } from '@spartan-ng/helm/sidebar';
 import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
 
 
 @Component({
-  imports: [NgIcon, HlmSidebar,HlmSidebarImports],
+  imports: [HlmSidebar, HlmSidebarImports, RouterLink],
   selector: 'app-sidebar',
   styleUrl: './sidebar.css',
   templateUrl: './sidebar.html',
-  providers: [
-    provideIcons({
-      lucideHouse,
-      lucideInbox,
-      lucideCalendar,
-      lucideSearch,
-      lucideSettings,
-    }),
-  ]
 })
 export class Sidebar {
   protected readonly _items = [
     {
-      title: 'Home',
-      url: '#',
-      icon: 'lucideHouse',
+      title: 'Dashboard',
+      url: '/dashboard',
+      icon: '/icons/sidebar/outline/dashboard.svg',
     },
     {
-      title: 'Inbox',
-      url: '#',
-      icon: 'lucideInbox',
+      title: 'Transactions',
+      url: '/transactions',
+      icon: '/icons/sidebar/outline/receipt_long.svg',
     },
     {
-      title: 'Calendar',
-      url: '#',
-      icon: 'lucideCalendar',
+      title: 'Categories',
+      url: '/categories',
+      icon: '/icons/sidebar/outline/category.svg',
     },
     {
-      title: 'Search',
-      url: '#',
-      icon: 'lucideSearch',
+      title: 'Reports',
+      url: '/reports',
+      icon: '/icons/sidebar/outline/donut_small.svg',
     },
     {
-      title: 'Settings',
-      url: '#',
-      icon: 'lucideSettings',
+      title: 'Accounts',
+      url: '/accounts',
+      icon: '/icons/sidebar/outline/account_balance.svg',
     },
   ];
+
+  protected readonly _settings = {
+    title: 'Settings',
+    url: '/settings',
+    icon: '/icons/sidebar/outline/settings.svg',
+  };
 }
