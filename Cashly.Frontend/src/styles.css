@@ -6,9 +6,6 @@
 
 @source './';
 @source '../libs';
-@source inline("{bg,text,border,ring}-{income,expense,warning,success,danger}");
-@source inline("{bg,text,border,ring}-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,100,200,300,400,500,600,700,800,900,950}");
-@source inline("{bg,text,border,ring}-{black,white,transparent,current}");
 
 @import '@fontsource-variable/geist';
 @import '@spartan-ng/brain/hlm-tailwind-preset.css';
