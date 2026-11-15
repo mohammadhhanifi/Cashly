@@ -1,25 +1,21 @@
-<div hlmSidebarWrapper>
+<div hlmSidebarWrapper sidebarWidth="12.5rem">
   <hlm-sidebar>
-    <div hlmSidebarHeader class="flex items-center justify-center my-2 bg-blue-400" >
-      <p class="text-[78px]] font-semibold text-text-primary">
+    <div hlmSidebarHeader class="flex items-center justify-center py-8 px-4 ">
+      <p class="text-[28px] font-semibold text-text-primary">
         <span class="text-primary">Cash</span>ly
       </p>
     </div>
-    <div hlmSidebarContent>
-      <div hlmSidebarGroup>
-        <div hlmSidebarGroupContent>
-          <ul hlmSidebarMenu>
-            @for (item of _items; track item.title) {
-            <li hlmSidebarMenuItem>
-              <a hlmSidebarMenuButton [routerLink]="item.url">
-                <img [src]="item.icon" />
-                <span>{{ item.title }}</span>
-              </a>
-            </li>
-            }
-          </ul>
-        </div>
-      </div>
+    <div hlmSidebarGroupContent class="px-2">
+      <ul hlmSidebarMenu class="gap-5">
+        @for (item of _items; track item.title) {
+        <li hlmSidebarMenuItem>
+          <a hlmSidebarMenuButton [routerLink]="item.url" class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium">
+            <img [src]="item.icon" class="size-6 shrink-0" alt="" />
+            <span>{{ item.title }}</span>
+          </a>
+        </li>
+        }
+      </ul>
     </div>
   </hlm-sidebar>
 
