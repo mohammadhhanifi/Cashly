@@ -1,5 +1,5 @@
 <div hlmSidebarWrapper sidebarWidth="12.5rem">
-  <hlm-sidebar>
+  <hlm-sidebar class="bg-red-800">
     <div hlmSidebarHeader class="flex items-center justify-center py-8 px-4 ">
       <p class="text-[28px] font-semibold text-text-primary">
         <span class="text-primary">Cash</span>ly
@@ -9,8 +9,13 @@
       <ul hlmSidebarMenu class="gap-5">
         @for (item of _items; track item.title) {
         <li hlmSidebarMenuItem>
-          <a hlmSidebarMenuButton [routerLink]="item.url" class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium">
-            <img [src]="item.icon" class="size-6 shrink-0" alt="" />
+          <a hlmSidebarMenuButton
+            [routerLink]="item.url"
+            routerLinkActive #rla="routerLinkActive"
+            [routerLinkActiveOptions]="{ exact: item.url === '/' }"
+            [isActive]="rla.isActive"
+            class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary ">
+            <img [src]="item.icon" class="size-6 shrink-0 fill-[#243c5a]" alt="" />
             <span>{{ item.title }}</span>
           </a>
         </li>

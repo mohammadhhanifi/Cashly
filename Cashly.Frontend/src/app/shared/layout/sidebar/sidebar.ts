@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { HlmSidebar } from '@spartan-ng/helm/sidebar';
 import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
 
 
 @Component({
-  imports: [HlmSidebar, HlmSidebarImports, RouterLink],
+  imports: [HlmSidebar, HlmSidebarImports, RouterLink, RouterLinkActive],
   selector: 'app-sidebar',
   styleUrl: './sidebar.css',
   templateUrl: './sidebar.html',
 })
 export class Sidebar {
+  ckeck() {
+    if (this._items[0].url=='') {
+
+    }
+  }
   protected readonly _items = [
     {
       title: 'Dashboard',
