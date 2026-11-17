@@ -1,5 +1,5 @@
-<div hlmSidebarWrapper  sidebarWidth="212px" >
-  <hlm-sidebar variant="floating" >
+<div hlmSidebarWrapper sidebarWidth="212px">
+  <hlm-sidebar variant="floating">
     <div hlmSidebarHeader class="flex items-center justify-center py-8 px-4 ">
       <p class="text-[28px] font-semibold text-text-primary">
         <a routerLink="/" class="text-primary ">Cash</a><a routerLink="/">ly</a>
@@ -9,11 +9,8 @@
       <ul hlmSidebarMenu class="gap-5">
         @for (item of _items; track item.title) {
         <li hlmSidebarMenuItem>
-          <a hlmSidebarMenuButton
-            [routerLink]="item.url"
-            routerLinkActive #rla="routerLinkActive"
-            [routerLinkActiveOptions]="{ exact: item.url === '/' }"
-            [isActive]="rla.isActive"
+          <a hlmSidebarMenuButton [routerLink]="item.url" routerLinkActive #rla="routerLinkActive"
+            [routerLinkActiveOptions]="{ exact: item.url === '/' }" [isActive]="rla.isActive"
             class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary ">
             <img [src]="item.icon" class="size-6 shrink-0" alt="" />
             <span>{{ item.title }}</span>
@@ -22,7 +19,34 @@
         }
       </ul>
     </div>
+
+        <hlm-card size="sm" class="mx-auto w-full max-w-sm my-10">
+          <hlm-card-header>
+            <h3 hlmCardTitle>Small Card</h3>
+            <p hlmCardDescription>This card uses the small size variant.</p>
+          </hlm-card-header>
+          <div hlmCardContent>
+            <p>The card component supports a size prop that can be set to "sm" for a more compact appearance.</p>
+          </div>
+          <hlm-card-footer>
+            <button hlmBtn variant="outline" size="sm" class="w-full">Action</button>
+          </hlm-card-footer>
+        </hlm-card>
+
+      <div class=" mt-auto py-4 border-t">
+        <ul hlmSidebarFooter>
+          <li hlmSheetFooter>
+            <a hlmSidebarMenuButton [routerLink]="_settings.url " routerLinkActive #rla="routerLinkActive"
+              [routerLinkActiveOptions]="{ exact: _settings.url === '/' }" [isActive]="rla.isActive"
+              class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary">
+              <img [src]="_settings.icon" class="size-6 shrink-0" alt="" />
+              <span>{{ _settings.title }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
   </hlm-sidebar>
+
 
   <ng-content />
 </div>
