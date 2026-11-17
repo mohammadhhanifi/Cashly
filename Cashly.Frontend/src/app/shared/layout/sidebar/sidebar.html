@@ -1,8 +1,8 @@
-<div hlmSidebarWrapper sidebarWidth="12.5rem">
-  <hlm-sidebar class="bg-red-800">
+<div hlmSidebarWrapper  sidebarWidth="212px" >
+  <hlm-sidebar variant="floating" >
     <div hlmSidebarHeader class="flex items-center justify-center py-8 px-4 ">
       <p class="text-[28px] font-semibold text-text-primary">
-        <span class="text-primary">Cash</span>ly
+        <a routerLink="/" class="text-primary ">Cash</a><a routerLink="/">ly</a>
       </p>
     </div>
     <div hlmSidebarGroupContent class="px-2">
@@ -15,7 +15,7 @@
             [routerLinkActiveOptions]="{ exact: item.url === '/' }"
             [isActive]="rla.isActive"
             class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary ">
-            <img [src]="item.icon" class="size-6 shrink-0 fill-[#243c5a]" alt="" />
+            <img [src]="item.icon" class="size-6 shrink-0" alt="" />
             <span>{{ item.title }}</span>
           </a>
         </li>
