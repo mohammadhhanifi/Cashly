@@ -1,5 +1,6 @@
-<div hlmSidebarWrapper sidebarWidth="212px">
-  <hlm-sidebar variant="floating">
+<div hlmSidebarWrapper  sidebarWidth="212px" >
+<hlm-sidebar variant="floating"
+  sidebarContainerClass="static h-auto min-h-svh block md:flex py-3 pl-3 pr-0 rounded-0">
     <div hlmSidebarHeader class="flex items-center justify-center py-8 px-4 ">
       <p class="text-[28px] font-semibold text-text-primary">
         <a routerLink="/" class="text-primary ">Cash</a><a routerLink="/">ly</a>
@@ -9,8 +10,11 @@
       <ul hlmSidebarMenu class="gap-5">
         @for (item of _items; track item.title) {
         <li hlmSidebarMenuItem>
-          <a hlmSidebarMenuButton [routerLink]="item.url" routerLinkActive #rla="routerLinkActive"
-            [routerLinkActiveOptions]="{ exact: item.url === '/' }" [isActive]="rla.isActive"
+          <a hlmSidebarMenuButton
+            [routerLink]="item.url"
+            routerLinkActive #rla="routerLinkActive"
+            [routerLinkActiveOptions]="{ exact: item.url === '/' }"
+            [isActive]="rla.isActive"
             class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary ">
             <img [src]="item.icon" class="size-6 shrink-0" alt="" />
             <span>{{ item.title }}</span>
@@ -46,7 +50,6 @@
         </ul>
       </div>
   </hlm-sidebar>
-
 
   <ng-content />
 </div>
