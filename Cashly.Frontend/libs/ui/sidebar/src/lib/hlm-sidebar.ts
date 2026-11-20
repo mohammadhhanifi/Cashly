@@ -59,7 +59,7 @@ import { injectHlmSidebarConfig } from './hlm-sidebar.token';
         <div
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
-          class="bg-sidebar group-data-[variant=floating]:ring-sidebar-border group-data-[variant=floating]:rounded-md group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:border flex size-full flex-col"
+          class="bg-sidebar group-data-[variant=floating]:ring-sidebar-border group-data-[variant=floating]:rounded-md group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:border flex w-full flex-col"
         >
           <ng-container *ngTemplateOutlet="contentContainer" />
         </div>
