@@ -1,6 +1,6 @@
-<div hlmSidebarWrapper  sidebarWidth="212px" >
-<hlm-sidebar variant="floating"
-  sidebarContainerClass="static h-auto min-h-svh block md:flex py-3 pl-3 pr-0 rounded-0">
+<div hlmSidebarWrapper sidebarWidth="212px">
+  <hlm-sidebar variant="floating"
+    sidebarContainerClass="static h-auto min-h-svh block md:flex py-3 pl-3 pr-0 rounded-0">
     <div hlmSidebarHeader class="flex items-center justify-center py-8 px-4 ">
       <p class="text-[28px] font-semibold text-text-primary">
         <a routerLink="/" class="text-primary ">Cash</a><a routerLink="/">ly</a>
@@ -10,11 +10,8 @@
       <ul hlmSidebarMenu class="gap-5">
         @for (item of _items; track item.title) {
         <li hlmSidebarMenuItem>
-          <a hlmSidebarMenuButton
-            [routerLink]="item.url"
-            routerLinkActive #rla="routerLinkActive"
-            [routerLinkActiveOptions]="{ exact: item.url === '/' }"
-            [isActive]="rla.isActive"
+          <a hlmSidebarMenuButton [routerLink]="item.url" routerLinkActive #rla="routerLinkActive"
+            [routerLinkActiveOptions]="{ exact: item.url === '/' }" [isActive]="rla.isActive"
             class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary ">
             <img [src]="item.icon" class="size-6 shrink-0" alt="" />
             <span>{{ item.title }}</span>
@@ -23,32 +20,38 @@
         }
       </ul>
     </div>
-
-        <hlm-card size="sm" class="mx-auto w-full max-w-sm my-10">
-          <hlm-card-header>
-            <h3 hlmCardTitle>Small Card</h3>
-            <p hlmCardDescription>This card uses the small size variant.</p>
-          </hlm-card-header>
-          <div hlmCardContent>
-            <p>The card component supports a size prop that can be set to "sm" for a more compact appearance.</p>
-          </div>
-          <hlm-card-footer>
-            <button hlmBtn variant="outline" size="sm" class="w-full">Action</button>
-          </hlm-card-footer>
-        </hlm-card>
-
-      <div class=" mt-auto py-4 border-t">
-        <ul hlmSidebarFooter>
-          <li hlmSheetFooter>
-            <a hlmSidebarMenuButton [routerLink]="_settings.url " routerLinkActive #rla="routerLinkActive"
-              [routerLinkActiveOptions]="{ exact: _settings.url === '/' }" [isActive]="rla.isActive"
-              class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary">
-              <img [src]="_settings.icon" class="size-6 shrink-0" alt="" />
-              <span>{{ _settings.title }}</span>
-            </a>
-          </li>
-        </ul>
+    <hlm-card size="sm" class="mx-2 max-w-sm my-10 p-2.5 rounded-md">
+      <div class="flex mx-1 items-center">
+        <a routerLink="/" class=" flex-auto size-6 shrink-0">
+          <img src="/icons/sidebar/fill/workspace_premium.svg" alt="sss">
+        </a>
+        <div class="flex-auto w-full"></div>
+        <div class="border rounded-sm size-8 flex-auto shrink-0 ">
+          <img src="/icons/sidebar/fill/close.svg" class="relative w-full h-full p-1 hover:bg-expense rounded-sm hover:cursor-pointer" alt="sss">
+        </div>
       </div>
+      <hlm-card-header class="p-0 pl-1 gap-3.5">
+        <h3 hlmCardTitle>Upgrade to Pro. </h3>
+        <p hlmCardDescription class="text-[11px]">Unlock more features and manage your finances better.</p>
+      </hlm-card-header>
+      <div class="border-none p-0 ">
+        <button hlmBtn
+          class="w-full h-fit py-3 px-4 rounded-md hover:cursor-pointer hover:bg-primary-light bg-[#1E293B]">Upgrade
+          Now</button>
+      </div>
+    </hlm-card>
+    <div class=" mt-auto py-4 border-t">
+      <ul hlmSidebarFooter>
+        <li hlmSheetFooter>
+          <a hlmSidebarMenuButton [routerLink]="_settings.url " routerLinkActive #rla="routerLinkActive"
+            [routerLinkActiveOptions]="{ exact: _settings.url === '/' }" [isActive]="rla.isActive"
+            class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary">
+            <img [src]="_settings.icon" class="size-6 shrink-0" alt="" />
+            <span>{{ _settings.title }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </hlm-sidebar>
 
   <ng-content />
