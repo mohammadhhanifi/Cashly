@@ -11,8 +11,8 @@
         <li hlmSidebarMenuItem>
           <a hlmSidebarMenuButton [routerLink]="item.url" routerLinkActive #rla="routerLinkActive"
             [routerLinkActiveOptions]="{ exact: item.url === '/' }" [isActive]="rla.isActive"
-            class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary ">
-            <img [src]="item.outlineIcon" class="size-6 shrink-0" alt="" />
+            class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary ">
+            <img [src]="rla.isActive ? item.fillIcon : item.outlineIcon" class="size-6 shrink-0" alt="" />
             <span>{{ item.title }}</span>
           </a>
         </li>
