@@ -12,7 +12,7 @@
           <a hlmSidebarMenuButton [routerLink]="item.url" routerLinkActive #rla="routerLinkActive"
             [routerLinkActiveOptions]="{ exact: item.url === '/' }" [isActive]="rla.isActive"
             class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary ">
-            <img [src]="item.icon" class="size-6 shrink-0" alt="" />
+            <img [src]="item.outlineIcon" class="size-6 shrink-0" alt="" />
             <span>{{ item.title }}</span>
           </a>
         </li>
@@ -48,7 +48,7 @@
           <a hlmSidebarMenuButton [routerLink]="_settings.url " routerLinkActive #rla="routerLinkActive"
             [routerLinkActiveOptions]="{ exact: _settings.url === '/' }" [isActive]="rla.isActive"
             class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary">
-            <img [src]="_settings.icon" class="size-6 shrink-0" alt="" />
+            <img [src]="_settings.outlineIcon" class="size-6 shrink-0" alt="" />
             <span>{{ _settings.title }}</span>
           </a>
         </li>

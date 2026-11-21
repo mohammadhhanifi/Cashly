@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject, Signal, signal } from '@angular/core';
+import { isActive, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HlmButtonImports } from '@spartan-ng/helm/button';
 import { HlmCardImports } from '@spartan-ng/helm/card';
 import { HlmSidebar } from '@spartan-ng/helm/sidebar';
@@ -24,7 +24,7 @@ import { delay } from 'rxjs';
 })
 export class Sidebar {
   cardVisible = signal(true);
-  
+
   upgrade() {
     this.cardVisible.set(false);
   }
@@ -33,33 +33,39 @@ export class Sidebar {
     {
       title: 'Dashboard',
       url: '/dashboard',
-      icon: '/icons/sidebar/outline/dashboard.svg',
+      outlineIcon: '/icons/sidebar/outline/dashboard.svg',
+      fillIcon: 'icons/sidebar/fill/dashboard.svg'
     },
     {
       title: 'Transactions',
       url: '/transactions',
-      icon: '/icons/sidebar/outline/receipt_long.svg',
+      outlineIcon: '/icons/sidebar/outline/receipt_long.svg',
+      fillIcon: '/icons/sidebar/fill/receipt_long.svg',
     },
     {
       title: 'Categories',
       url: '/categories',
-      icon: '/icons/sidebar/outline/category.svg',
+      outlineIcon: '/icons/sidebar/outline/category.svg',
+      fillIcon: '/icons/sidebar/fill/category.svg',
     },
     {
       title: 'Reports',
       url: '/reports',
-      icon: '/icons/sidebar/outline/donut_small.svg',
+      outlineIcon: '/icons/sidebar/outline/donut_small.svg',
+      fillIcon: '/icons/sidebar/fill/donut_small.svg',
     },
     {
       title: 'Accounts',
       url: '/accounts',
-      icon: '/icons/sidebar/outline/account_balance.svg',
+      outlineIcon: '/icons/sidebar/outline/account_balance.svg',
+      fillIcon: '/icons/sidebar/fill/account_balance.svg',
     },
   ];
 
   protected readonly _settings = {
     title: 'Settings',
     url: '/settings',
-    icon: '/icons/sidebar/outline/settings.svg',
+    outlineIcon: '/icons/sidebar/outline/settings.svg',
+    fillIcon: '/icons/sidebar/fill/settings.svg',
   };
 }
