@@ -11,8 +11,8 @@
         <li hlmSidebarMenuItem>
           <a hlmSidebarMenuButton [routerLink]="item.url" routerLinkActive #rla="routerLinkActive"
             [routerLinkActiveOptions]="{ exact: item.url === '/' }" [isActive]="rla.isActive"
-            class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary ">
-            <img [src]="rla.isActive ? item.fillIcon : item.outlineIcon" class="size-6 shrink-0" alt="" />
+            class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium not-data-[active=true]:hover:bg-primary-light hover:text-primary data-[active=true]:text-text-on-primary ">
+            <ng-icon [name]="rla.isActive ? item.fillIcon : item.outlineIcon" size="24" />
             <span>{{ item.title }}</span>
           </a>
         </li>
@@ -20,16 +20,17 @@
       </ul>
     </div>
     @if (cardVisible()==true) {
+    <!-- UpgradeCard -->
     <hlm-card size="sm" class="mx-2 max-w-sm my-10 p-2.5 rounded-md">
       <div class="flex mx-1 items-center">
         <a routerLink="/" class=" flex-auto size-6 shrink-0">
-          <img src="/icons/sidebar/fill/workspace_premium.svg" alt="sss">
+          <ng-icon [name]="_upgradeCard[0].fillIcon" size="24" [routerLink]="_upgradeCard[0].url"></ng-icon>
         </a>
         <div class="flex-auto w-full"></div>
-        <div class="border rounded-sm size-8 flex-auto shrink-0 " (click)="upgrade()">
-          <img src="/icons/sidebar/fill/close.svg"
-            class="relative w-full h-full p-1 hover:bg-expense rounded-sm hover:cursor-pointer" alt="sss">
-        </div>
+        <button type="button" aria-label="Close upgrade card" (click)="upgrade()"
+          class="flex size-8 shrink-0 items-center justify-center rounded-sm border hover:cursor-pointer hover:bg-expense hover:text-text-on-primary hover:border-none">
+          <ng-icon [name]="_upgradeCard[1].fillIcon" size="24" aria-hidden="true" />
+        </button>
       </div>
       <hlm-card-header class="p-0 pl-1 gap-3.5">
         <h3 hlmCardTitle>Upgrade to Pro. </h3>
@@ -37,7 +38,7 @@
       </hlm-card-header>
       <div class="border-none p-0 ">
         <button hlmBtn (click)="upgrade()"
-          class="w-full h-fit py-3 px-4 rounded-md hover:cursor-pointer hover:bg-primary-light bg-[#1E293B]">Upgrade
+          class="w-full h-fit py-3 px-4 rounded-md hover:cursor-pointer hover:bg-primary-light hover:text-primary bg-[#1E293B]">Upgrade
           Now</button>
       </div>
     </hlm-card>
@@ -48,7 +49,7 @@
           <a hlmSidebarMenuButton [routerLink]="_settings.url " routerLinkActive #rla="routerLinkActive"
             [routerLinkActiveOptions]="{ exact: _settings.url === '/' }" [isActive]="rla.isActive"
             class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary">
-            <img [src]="_settings.outlineIcon" class="size-6 shrink-0" alt="" />
+            <ng-icon [name]="rla.isActive ? _settings.fillIcon : _settings.outlineIcon" size="24" />
             <span>{{ _settings.title }}</span>
           </a>
         </li>

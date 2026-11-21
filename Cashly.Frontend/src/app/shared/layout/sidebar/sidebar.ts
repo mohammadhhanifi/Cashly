@@ -1,11 +1,27 @@
-import { Component, inject, Signal, signal } from '@angular/core';
-import { isActive, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { HlmButtonImports } from '@spartan-ng/helm/button';
 import { HlmCardImports } from '@spartan-ng/helm/card';
 import { HlmSidebar } from '@spartan-ng/helm/sidebar';
 import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
-import { delay } from 'rxjs';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import {
+  matAccountBalanceFillOutline,
+  matAccountBalanceOutline,
+  matAnalyticsFillOutline,
+  matAnalyticsOutline,
+  matCategoryFillOutline,
+  matCategoryOutline,
+  matCloseFillOutline,
+  matDonutSmallFillOutline,
+  matDonutSmallOutline,
+  matReceiptLongFillOutline,
+  matReceiptLongOutline,
+  matSettingsFillOutline,
+  matSettingsOutline,
+  matWorkspacePremiumFillOutline,
 
+} from '@ng-icons/material-symbols/outline';
 
 
 
@@ -16,11 +32,24 @@ import { delay } from 'rxjs';
     RouterLink,
     RouterLinkActive,
     HlmCardImports,
-    HlmButtonImports
+    HlmButtonImports,
+    NgIcon
   ],
   selector: 'app-sidebar',
   styleUrl: './sidebar.css',
   templateUrl: './sidebar.html',
+  providers: [
+    provideIcons({
+      matAnalyticsOutline, matAnalyticsFillOutline,
+      matReceiptLongOutline, matReceiptLongFillOutline,
+      matCategoryOutline, matCategoryFillOutline,
+      matDonutSmallOutline, matDonutSmallFillOutline,
+      matAccountBalanceOutline, matAccountBalanceFillOutline,
+      matSettingsOutline, matSettingsFillOutline,
+      matWorkspacePremiumFillOutline,
+      matCloseFillOutline
+    }),
+  ],
 })
 export class Sidebar {
   cardVisible = signal(true);
@@ -30,42 +59,18 @@ export class Sidebar {
   }
 
   protected readonly _items = [
-    {
-      title: 'Dashboard',
-      url: '/dashboard',
-      outlineIcon: '/icons/sidebar/outline/dashboard.svg',
-      fillIcon: 'icons/sidebar/fill/dashboard.svg'
-    },
-    {
-      title: 'Transactions',
-      url: '/transactions',
-      outlineIcon: '/icons/sidebar/outline/receipt_long.svg',
-      fillIcon: '/icons/sidebar/fill/receipt_long.svg',
-    },
-    {
-      title: 'Categories',
-      url: '/categories',
-      outlineIcon: '/icons/sidebar/outline/category.svg',
-      fillIcon: '/icons/sidebar/fill/category.svg',
-    },
-    {
-      title: 'Reports',
-      url: '/reports',
-      outlineIcon: '/icons/sidebar/outline/donut_small.svg',
-      fillIcon: '/icons/sidebar/fill/donut_small.svg',
-    },
-    {
-      title: 'Accounts',
-      url: '/accounts',
-      outlineIcon: '/icons/sidebar/outline/account_balance.svg',
-      fillIcon: '/icons/sidebar/fill/account_balance.svg',
-    },
+    { title: 'Dashboard', url: '/dashboard', outlineIcon: 'matAnalyticsOutline', fillIcon: 'matAnalyticsFillOutline' },
+    { title: 'Transactions', url: '/transactions', outlineIcon: 'matReceiptLongOutline', fillIcon: 'matReceiptLongFillOutline' },
+    { title: 'Categories', url: '/categories', outlineIcon: 'matCategoryOutline', fillIcon: 'matCategoryFillOutline' },
+    { title: 'Reports', url: '/reports', outlineIcon: 'matDonutSmallOutline', fillIcon: 'matDonutSmallFillOutline' },
+    { title: 'Accounts', url: '/accounts', outlineIcon: 'matAccountBalanceOutline', fillIcon: 'matAccountBalanceFillOutline' },
   ];
 
   protected readonly _settings = {
-    title: 'Settings',
-    url: '/settings',
-    outlineIcon: '/icons/sidebar/outline/settings.svg',
-    fillIcon: '/icons/sidebar/fill/settings.svg',
+    title: 'Settings',url: '/settings',outlineIcon: 'matSettingsOutline',fillIcon: 'matSettingsFillOutline'
   };
+  protected readonly _upgradeCard = [
+    {url: '/premium',fillIcon: 'matWorkspacePremiumFillOutline'},
+    {url: '/',fillIcon: 'matCloseFillOutline',}
+  ]
 }
