@@ -80,7 +80,7 @@
   --radius-md: 12px;
   --radius-lg: 16px;
 
-    /* Typography */
+  /* Typography */
   --text-h1: 1.75rem;
   --text-h1--line-height: 1.3;
   --text-h2: 1.5rem;
@@ -102,6 +102,15 @@
   --text-number-lg--line-height: 1.2;
   --text-number-sm: 1rem;
   --text-number-sm--line-height: 1.2;
+
+  /* Spacing */
+  --spacing-sp-4: 0.25rem;
+  --spacing-sp-8: 0.5rem;
+  --spacing-sp-12: 0.75rem;
+  --spacing-sp-16: 1rem;
+  --spacing-sp-24: 1.5rem;
+  --spacing-sp-32: 2rem;
+  --spacing-sp-48: 3rem;
 }
 
 :root {
