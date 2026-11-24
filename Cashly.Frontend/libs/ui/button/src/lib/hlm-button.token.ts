@@ -7,7 +7,7 @@ export interface BrnButtonConfig {
 }
 
 const defaultConfig: BrnButtonConfig = {
-  variant: 'default',
+  variant: 'cashlyDefault',
   size: 'default',
 };
 
