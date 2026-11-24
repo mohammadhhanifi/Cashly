@@ -11,9 +11,9 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         cashlyPrimary:
-          'bg-primary border-border px-sp-16 py-sp-12 text-text-on-primary h-fit hover:cursor-pointer hover:bg-primary-light rounded-md',
+          'bg-primary border-border text-text-on-primary hover:cursor-pointer hover:bg-primary-light rounded-md',
         cashlyDefault:
-          'bg-surface border-border px-sp-16 py-sp-12 text-text-primary h-fit w-fit hover:cursor-pointer hover:bg-primary-light rounded-md',
+          'bg-surface border-border text-text-primary w-fit hover:cursor-pointer hover:bg-primary-light rounded-md',
         default: 'bg-primary text-primary-foreground hover:bg-primary/80',
         outline:
           'border-border bg-background hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 aria-expanded:bg-muted aria-expanded:text-foreground',
@@ -26,6 +26,7 @@ export const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
+        cashly: 'gap-1.5 px-sp-16 py-sp-12 h-fit text-label',
         default:
           'gap-1.5 px-2.5 has-data-[icon=inline-end]:pe-2 has-data-[icon=inline-start]:ps-2',
         xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pe-1.5 has-data-[icon=inline-start]:ps-1.5 [&_ng-icon:not([class*='text-'])]:text-[length:--spacing(3)]",
@@ -41,7 +42,7 @@ export const buttonVariants = cva(
     },
     defaultVariants: {
       variant: 'cashlyDefault',
-      size: 'default',
+      size: 'cashly',
     },
   },
 );
