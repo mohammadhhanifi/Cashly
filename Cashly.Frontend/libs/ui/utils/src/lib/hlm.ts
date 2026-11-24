@@ -11,7 +11,15 @@ import {
   runInInjectionContext,
 } from '@angular/core';
 import { type ClassValue, clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { extendTailwindMerge } from 'tailwind-merge';
+
+const twMerge = extendTailwindMerge({
+  extend: {
+    theme: {
+      text: ['h1', 'h2', 'h3', 'body', 'body-sm', 'label', 'label-hint', 'number-lg', 'number-sm'],
+    },
+  },
+});
 
 export function hlm(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
