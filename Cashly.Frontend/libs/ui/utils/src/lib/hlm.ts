@@ -17,6 +17,7 @@ const twMerge = extendTailwindMerge({
   extend: {
     theme: {
       text: ['h1', 'h2', 'h3', 'body', 'body-sm', 'label', 'label-hint', 'number-lg', 'number-sm'],
+       spacing: ['sp-4', 'sp-8', 'sp-12', 'sp-16', 'sp-24', 'sp-32', 'sp-48'],
     },
   },
 });
