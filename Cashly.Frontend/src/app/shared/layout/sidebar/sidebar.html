@@ -1,17 +1,17 @@
 <div hlmSidebarWrapper sidebarWidth="212px">
-  <hlm-sidebar variant="floating" sidebarContainerClass="static h-auto min-h-svh block md:flex py-3 pl-3 pr-0">
-    <div hlmSidebarHeader class="flex items-center justify-center py-8 px-4 ">
-      <p class="text-[28px] font-semibold text-text-primary">
+  <hlm-sidebar variant="floating" sidebarContainerClass="static h-auto min-h-svh block md:flex py-sp-12 pl-sp-12 pr-0">
+    <div hlmSidebarHeader class="flex items-center justify-center py-sp-32 px-sp-16 ">
+      <p class="text-h1">
         <a routerLink="/" class="text-primary ">Cash</a><a routerLink="/">ly</a>
       </p>
     </div>
-    <div hlmSidebarGroupContent class="px-2">
+    <div hlmSidebarGroupContent class="px-sp-8">
       <ul hlmSidebarMenu class="gap-5">
         @for (item of _items; track item.title) {
         <li hlmSidebarMenuItem>
           <a hlmSidebarMenuButton [routerLink]="item.url" routerLinkActive #rla="routerLinkActive"
             [routerLinkActiveOptions]="{ exact: item.url === '/' }" [isActive]="rla.isActive"
-            class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium not-data-[active=true]:hover:bg-primary-light hover:text-primary data-[active=true]:text-text-on-primary ">
+            class="h-fit gap-5 px-sp-16 py-sp-12 text-label not-data-[active=true]:hover:bg-primary-light hover:text-primary data-[active=true]:text-text-on-primary ">
             <ng-icon [name]="rla.isActive ? item.fillIcon : item.outlineIcon" size="24" />
             <span>{{ item.title }}</span>
           </a>
@@ -22,36 +22,37 @@
 
     <!-- UpgradePlan Card : -->
     @if (cardVisible()==true) {
-    <hlm-card size="sm" class="mx-2 max-w-sm my-10 p-2.5 rounded-md">
-      <div class="flex mx-1 items-center">
-        <a routerLink="/" class=" flex-auto size-6 shrink-0">
+    <hlm-card size="sm" class="mx-sp-8 max-w-sm my-sp-16 p-sp-8 rounded-md gap-sp-16">
+      <div class="flex items-center">
+        <a routerLink="/" class=" flex-auto size-sp-24 shrink-0">
           <ng-icon [name]="_upgradeCard[0].fillIcon" size="24" [routerLink]="_upgradeCard[0].url"></ng-icon>
         </a>
         <div class="flex-auto w-full"></div>
-        <button type="button" aria-label="Close upgrade card" (click)="upgrade()"
-          class="flex size-8 shrink-0 items-center justify-center rounded-sm border hover:cursor-pointer hover:bg-expense hover:text-text-on-primary hover:border-none">
+        <button type="button" (click)="upgrade()"
+          class="flex size-sp-32 shrink-0 items-center justify-center rounded-sm border hover:cursor-pointer hover:bg-expense hover:text-text-on-primary hover:border-none">
           <ng-icon [name]="_upgradeCard[1].fillIcon" size="24" aria-hidden="true" />
         </button>
       </div>
-      <hlm-card-header class="p-0 pl-1 gap-3.5">
-        <h3 hlmCardTitle>Upgrade to Pro. </h3>
-        <p hlmCardDescription class="text-[11px]">Unlock more features and manage your finances better.</p>
+      <hlm-card-header class="p-0 pl-1 gap-sp-8">
+        <h3 hlmCardTitle>Upgrade to Pro.</h3>
+        <p hlmCardDescription class="text-label-hint text-text-secondary tracking-tighter">Unlock more features and
+          manage your finances better.</p>
       </hlm-card-header>
       <div class="border-none p-0 ">
-        <button hlmBtn (click)="upgrade()"
-          class="w-full h-fit py-3 px-4 rounded-md hover:cursor-pointer hover:bg-primary-light hover:text-primary bg-[#1E293B]">Upgrade
+        <button hlmBtn aria-label="Close upgrade card" (click)="upgrade()"
+          class="w-full h-fit py-sp-12 px-sp-16 text-label! rounded-md hover:cursor-pointer hover:bg-primary-light hover:text-primary bg-[#1E293B]">Upgrade
           Now</button>
       </div>
     </hlm-card>
     }
 
     <!-- Setting Menu Item : -->
-    <div class=" mt-auto py-4 border-t">
+    <div class=" mt-auto py-sp-16 border-t">
       <ul hlmSidebarFooter>
         <li hlmSheetFooter>
           <a hlmSidebarMenuButton [routerLink]="_settings.url " routerLinkActive #rla="routerLinkActive"
             [routerLinkActiveOptions]="{ exact: _settings.url === '/' }" [isActive]="rla.isActive"
-            class="h-12 gap-5 px-4 py-3 text-sm leading-normal font-medium   not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary">
+            class="gap-5 px-sp-16 py-sp-12 text-label h-fit not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary">
             <ng-icon [name]="rla.isActive ? _settings.fillIcon : _settings.outlineIcon" size="24" />
             <span>{{ _settings.title }}</span>
           </a>
