@@ -2,7 +2,9 @@
   <hlm-sidebar variant="floating" sidebarContainerClass="static h-auto min-h-svh block md:flex py-sp-12 pl-sp-12 pr-0">
     <div hlmSidebarHeader class="flex items-center justify-center py-sp-32 px-sp-16 ">
       <p class="text-h1">
-        <a routerLink="/" class="text-primary ">Cash</a><a routerLink="/">ly</a>
+        <a routerLink="/" class="text-primary ">
+          <span>Cash</span> <span class="text-text-primary">ly</span>
+        </a>
       </p>
     </div>
     <div hlmSidebarGroupContent class="px-sp-8">
@@ -21,26 +23,25 @@
     </div>
 
     <!-- UpgradePlan Card : -->
-    @if (cardVisible()==true) {
+    @if (cardVisible()) {
     <hlm-card size="sm" class="mx-sp-8 max-w-sm my-sp-16 p-sp-8 rounded-md gap-sp-16">
-      <div class="flex items-center">
-        <a routerLink="/" class=" flex-auto size-sp-24 shrink-0">
-          <ng-icon [name]="_upgradeCard[0].fillIcon" size="24" [routerLink]="_upgradeCard[0].url"></ng-icon>
+      <div class="flex items-center justify-between">
+        <a [routerLink]="_upgradeCard[0].url" aria-label="Upgrade to Pro" class="size-sp-24 shrink-0">
+          <ng-icon [name]="_upgradeCard[0].fillIcon" size="24" aria-hidden="true" />
         </a>
-        <div class="flex-auto w-full"></div>
-        <button type="button" (click)="upgrade()"
+        <button type="button" aria-label="Close upgrade card" (click)="upgrade()"
           class="flex size-sp-32 shrink-0 items-center justify-center rounded-sm border hover:cursor-pointer hover:bg-expense hover:text-text-on-primary hover:border-none">
           <ng-icon [name]="_upgradeCard[1].fillIcon" size="24" aria-hidden="true" />
         </button>
       </div>
-      <hlm-card-header class="p-0 pl-1 gap-sp-8">
+      <hlm-card-header class="p-0 pl-sp-4 gap-sp-8">
         <h3 hlmCardTitle>Upgrade to Pro.</h3>
-        <p hlmCardDescription class="text-label-hint text-text-secondary tracking-tighter">Unlock more features and
+        <p hlmCardDescription class="text-label-hint text-text-secondary">Unlock more features and
           manage your finances better.</p>
       </hlm-card-header>
       <div class="border-none p-0 ">
-        <button hlmBtn aria-label="Close upgrade card" (click)="upgrade()"
-          class="w-full h-fit py-sp-12 px-sp-16 text-label! rounded-md hover:cursor-pointer hover:bg-primary-light hover:text-primary bg-[#1E293B]">Upgrade
+        <button hlmBtn (click)="upgrade()"
+          class="w-full hover:text-primary text-text-on-primary bg-header-dark">Upgrade
           Now</button>
       </div>
     </hlm-card>
@@ -49,10 +50,10 @@
     <!-- Setting Menu Item : -->
     <div class=" mt-auto py-sp-16 border-t">
       <ul hlmSidebarFooter>
-        <li hlmSheetFooter>
-          <a hlmSidebarMenuButton [routerLink]="_settings.url " routerLinkActive #rla="routerLinkActive"
+        <li hlmSidebarMenuItem>
+          <a hlmSidebarMenuButton [routerLink]="_settings.url" routerLinkActive #rla="routerLinkActive"
             [routerLinkActiveOptions]="{ exact: _settings.url === '/' }" [isActive]="rla.isActive"
-            class="gap-5 px-sp-16 py-sp-12 text-label h-fit not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary">
+            class="gap-5 px-sp-16 py-sp-12 text-label h-fit not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary hover:text-primary">
             <ng-icon [name]="rla.isActive ? _settings.fillIcon : _settings.outlineIcon" size="24" />
             <span>{{ _settings.title }}</span>
           </a>
