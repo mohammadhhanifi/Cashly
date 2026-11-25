@@ -14,7 +14,7 @@
           <a hlmSidebarMenuButton [routerLink]="item.url" routerLinkActive #rla="routerLinkActive"
             [routerLinkActiveOptions]="{ exact: item.url === '/' }" [isActive]="rla.isActive"
             class="h-fit gap-5 px-sp-16 py-sp-12 text-label not-data-[active=true]:hover:bg-primary-light hover:text-primary data-[active=true]:text-text-on-primary ">
-            <ng-icon [name]="rla.isActive ? item.fillIcon : item.outlineIcon" size="24" />
+            <ng-icon [name]="rla.isActive ? item.fillIcon : item.outlineIcon" size="1.5rem" />
             <span>{{ item.title }}</span>
           </a>
         </li>
@@ -27,11 +27,11 @@
     <hlm-card size="sm" class="mx-sp-8 max-w-sm my-sp-16 p-sp-8 rounded-md gap-sp-16">
       <div class="flex items-center justify-between">
         <a [routerLink]="_upgradeCard[0].url" aria-label="Upgrade to Pro" class="size-sp-24 shrink-0">
-          <ng-icon [name]="_upgradeCard[0].fillIcon" size="24" aria-hidden="true" />
+          <ng-icon [name]="_upgradeCard[0].fillIcon" size="1.5rem" aria-hidden="true" />
         </a>
         <button type="button" aria-label="Close upgrade card" (click)="upgrade()"
           class="flex size-sp-32 shrink-0 items-center justify-center rounded-sm border hover:cursor-pointer hover:bg-expense hover:text-text-on-primary hover:border-none">
-          <ng-icon [name]="_upgradeCard[1].fillIcon" size="24" aria-hidden="true" />
+          <ng-icon [name]="_upgradeCard[1].fillIcon" size="1.5rem" aria-hidden="true" />
         </button>
       </div>
       <hlm-card-header class="p-0 pl-sp-4 gap-sp-8">
@@ -54,7 +54,7 @@
           <a hlmSidebarMenuButton [routerLink]="_settings.url" routerLinkActive #rla="routerLinkActive"
             [routerLinkActiveOptions]="{ exact: _settings.url === '/' }" [isActive]="rla.isActive"
             class="gap-5 px-sp-16 py-sp-12 text-label h-fit not-data-[active=true]:hover:bg-primary-light data-[active=true]:text-text-on-primary hover:text-primary">
-            <ng-icon [name]="rla.isActive ? _settings.fillIcon : _settings.outlineIcon" size="24" />
+            <ng-icon [name]="rla.isActive ? _settings.fillIcon : _settings.outlineIcon" size="1.5rem" />
             <span>{{ _settings.title }}</span>
           </a>
         </li>
