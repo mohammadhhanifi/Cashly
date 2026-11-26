@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 import { HlmButtonImports } from '@spartan-ng/helm/button';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { matKeyboardArrowDownFillOutline } from '@ng-icons/material-symbols/outline';
+import {
+  matKeyboardArrowDownFillOutline,
+  matNotificationsOutline,
+  matLightModeOutline,
+
+} from '@ng-icons/material-symbols/outline';
 @Component({
   imports: [
     HlmButtonImports,
@@ -13,7 +18,10 @@ import { matKeyboardArrowDownFillOutline } from '@ng-icons/material-symbols/outl
   templateUrl: './page-header.html',
   providers: [
     provideIcons({
-      matKeyboardArrowDownFillOutline
+      matKeyboardArrowDownFillOutline,
+      matNotificationsOutline,
+      matLightModeOutline,
+
     }),
   ],
 
