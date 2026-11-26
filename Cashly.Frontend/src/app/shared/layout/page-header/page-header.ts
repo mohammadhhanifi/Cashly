@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
-import { HlmButtonImports } from '@spartan-ng/helm/button';
-import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
   matKeyboardArrowDownFillOutline,
   matNotificationsOutline,
   matLightModeOutline,
+}
+from '@ng-icons/material-symbols/outline';
+import { Component } from '@angular/core';
+import { HlmButtonImports } from '@spartan-ng/helm/button';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { HlmAvatarImports } from '@spartan-ng/helm/avatar';
 
-} from '@ng-icons/material-symbols/outline';
 @Component({
   imports: [
     HlmButtonImports,
+    HlmAvatarImports,
     NgIcon,
-
   ],
   selector: 'app-page-header',
   styleUrl: './page-header.css',
